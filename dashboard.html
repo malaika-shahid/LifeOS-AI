@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LifeOS AI Dashboard</title>
+
+
+<link rel="stylesheet" href="../css/style.css">
+
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+
+</head>
+
+
+<body>
+
+
+<div class="module-page">
+
+
+<!-- Dashboard Header -->
+
+<section class="dashboard-header">
+
+
+<div>
+
+<h1>
+Good Morning, User 👋
+</h1>
+
+
+<p>
+Your AI Life Assistant has analyzed your day.
+</p>
+
+
+</div>
+
+
+<div 
+class="ai-status"
+onclick="aiOnline()"
+>
+
+
+
+<i data-lucide="bot"></i>
+
+
+
+<span>
+AI Online
+</span>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section class="cards">
+
+
+<div class="card gradient-blue">
+
+
+<i data-lucide="brain-circuit"></i>
+
+
+<h3>
+Life Intelligence Score
+</h3>
+
+
+<h1>
+92%
+</h1>
+
+
+<p>
+AI analyzed your lifestyle balance
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="card gradient-purple">
+
+
+<i data-lucide="target"></i>
+
+
+<h3>
+Goal Completion
+</h3>
+
+
+<h1>
+78%
+</h1>
+
+
+<p>
+12 goals achieved this month
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="card gradient-green">
+
+
+<i data-lucide="heart-pulse"></i>
+
+
+<h3>
+Health Status
+</h3>
+
+
+<h1>
+Excellent
+</h1>
+
+
+<p>
+Sleep + activity optimized
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="card gradient-orange">
+
+
+<i data-lucide="wallet"></i>
+
+
+<h3>
+Financial Score
+</h3>
+
+
+<h1>
+85%
+</h1>
+
+
+<p>
+Saving habits improving
+</p>
+
+
+</div>
+
+
+
+</section>
+
+
+<!-- Today's Focus -->
+
+
+<section class="dashboard-box">
+
+
+<h2>
+
+<i data-lucide="calendar-check"></i>
+
+Today's Focus
+
+</h2>
+
+
+
+<div class="task-list">
+
+
+<div class="task">
+
+<i data-lucide="check-circle"></i>
+
+Complete Project Work
+
+<span>
+Done
+</span>
+
+</div>
+
+
+
+<div class="task">
+
+<i data-lucide="book-open"></i>
+
+Learning Session
+
+<span>
+Pending
+</span>
+
+</div>
+
+
+
+<div class="task">
+
+<i data-lucide="dumbbell"></i>
+
+Health Activity
+
+<span>
+Upcoming
+</span>
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- AI Recommendation -->
+
+
+<section class="ai-message">
+
+
+<i data-lucide="sparkles"></i>
+
+
+<div>
+
+
+<h2>
+AI Recommendation
+</h2>
+
+
+<p>
+
+"You have high productivity potential today.
+Complete your most important task before 12 PM."
+
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- Quick Overview -->
+
+
+<section class="overview">
+
+
+
+<div class="overview-card">
+
+
+<i data-lucide="wallet"></i>
+
+
+<h3>
+Finance
+</h3>
+
+
+<p>
+Budget usage: 65%
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="overview-card">
+
+
+<i data-lucide="heart-pulse"></i>
+
+
+<h3>
+Health
+</h3>
+
+
+<p>
+Sleep: 7.5 Hours
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="overview-card">
+
+
+<i data-lucide="graduation-cap"></i>
+
+
+<h3>
+Learning
+</h3>
+
+
+<p>
+2 hours completed
+</p>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+</div>
+
+
+
+<script>
+
+lucide.createIcons();
+
+</script>
+
+
+</body>
+
+</html>
