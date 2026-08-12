@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LifeOS AI | Health Intelligence</title>
+
+
+<link rel="stylesheet" href="../css/style.css">
+
+
+<!-- Icons -->
+<script src="https://unpkg.com/lucide@latest"></script>
+
+
+<!-- Charts -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+</head>
+
+
+<body>
+
+
+<div class="module-page health-page">
+
+
+
+<!-- ===========================
+        TOP HEADER
+=========================== -->
+
+
+<div class="health-topbar">
+
+
+<div class="module-header">
+
+
+<h1>
+
+<i data-lucide="heart-pulse"></i>
+
+AI Health Intelligence
+
+</h1>
+
+
+<p>
+
+Your AI wellness system analyzing your lifestyle,
+energy and daily habits.
+
+</p>
+
+
+</div>
+
+
+
+
+<button class="back-btn" onclick="goDashboard()">
+
+
+<i data-lucide="arrow-left"></i>
+
+
+Dashboard
+
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- ===========================
+        AI HEALTH SCAN
+=========================== -->
+
+
+<section class="dashboard-box health-scan">
+
+
+<h2>
+
+<i data-lucide="scan-heart"></i>
+
+AI Health Scan
+
+</h2>
+
+
+<p>
+
+Allow LifeOS AI to analyze your sleep,
+activity, hydration and wellness patterns.
+
+</p>
+
+
+
+<button 
+class="analyze-btn"
+onclick="analyzeHealth()">
+
+
+<i data-lucide="sparkles"></i>
+
+
+Analyze My Health
+
+
+</button>
+
+
+
+
+<div class="scan-result" id="healthResult">
+
+
+Click analyze to generate AI wellness insights.
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- ===========================
+        HEALTH SCORE
+=========================== -->
+
+
+<section class="health-score-section">
+
+
+<div class="health-score-card">
+
+
+<h2>
+
+Health Intelligence Score
+
+</h2>
+
+
+
+<div class="health-circle">
+
+
+<h1 id="healthScore">
+
+0
+
+</h1>
+
+
+<span>
+
+Excellent
+
+</span>
+
+
+</div>
+
+
+<p>
+
+AI evaluated your complete wellness profile.
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="health-ai-summary">
+
+
+<h2>
+
+<i data-lucide="brain"></i>
+
+AI Wellness Summary
+
+</h2>
+
+
+<p id="healthSummary">
+
+
+Your AI health analysis will appear here.
+
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- ===========================
+        HEALTH CARDS
+=========================== -->
+
+
+<section class="health-cards">
+
+
+
+<div class="health-card sleep-card">
+
+
+<i data-lucide="moon"></i>
+
+
+<h3>
+
+Sleep Intelligence
+
+</h3>
+
+
+<h2>
+
+87%
+
+</h2>
+
+
+<p>
+
+7h 45m average sleep
+
+</p>
+
+
+<span>
+
+AI Suggestion:
+Sleep before 11 PM
+
+</span>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="health-card activity-card">
+
+
+<i data-lucide="footprints"></i>
+
+
+<h3>
+
+Daily Activity
+
+</h3>
+
+
+<h2>
+
+8,450
+
+</h2>
+
+
+<p>
+
+Steps completed today
+
+</p>
+
+
+<span>
+
+85% daily goal
+
+</span>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="health-card water-card">
+
+
+<i data-lucide="droplets"></i>
+
+
+<h3>
+
+Hydration
+
+</h3>
+
+
+<h2>
+
+2.4L
+
+</h2>
+
+
+<p>
+
+Water intake
+
+</p>
+
+
+<span>
+
+500ml remaining
+
+</span>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="health-card stress-card">
+
+
+<i data-lucide="brain-circuit"></i>
+
+
+<h3>
+
+Stress Analysis
+
+</h3>
+
+
+<h2>
+
+Low
+
+</h2>
+
+
+<p>
+
+Balanced emotional state
+
+</p>
+
+
+<span>
+
+AI detected stability
+
+</span>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- ===========================
+        HEALTH ANALYTICS
+=========================== -->
+
+
+<section class="health-charts">
+
+
+<div class="chart-card">
+
+
+<h2>
+
+<i data-lucide="activity"></i>
+
+
+Weekly Activity
+
+
+</h2>
+
+
+<canvas id="activityChart"></canvas>
+
+
+</div>
+
+
+
+
+
+<div class="chart-card">
+
+
+<h2>
+
+<i data-lucide="bed"></i>
+
+
+Sleep Analysis
+
+
+</h2>
+
+
+<canvas id="sleepChart"></canvas>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- ===========================
+        AI RECOMMENDATIONS
+=========================== -->
+
+
+<section class="health-recommendations">
+
+
+<h2>
+
+<i data-lucide="lightbulb"></i>
+
+
+AI Smart Recommendations
+
+
+</h2>
+
+
+
+
+
+<div class="recommendation-grid">
+
+
+
+<div class="recommend-card">
+
+
+<i data-lucide="moon"></i>
+
+
+<h3>
+
+Sleep Optimization
+
+</h3>
+
+
+<p>
+
+Your sleep consistency improved by 18%.
+Maintain a fixed sleeping schedule.
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="recommend-card">
+
+
+<i data-lucide="utensils"></i>
+
+
+<h3>
+
+Nutrition Advice
+
+</h3>
+
+
+<p>
+
+Increase protein intake for better energy
+and recovery.
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="recommend-card">
+
+
+<i data-lucide="dumbbell"></i>
+
+
+<h3>
+
+Fitness Plan
+
+</h3>
+
+
+<p>
+
+AI created a 20 minute daily workout plan
+based on your activity.
+
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- ===========================
+        WELLNESS GOALS
+=========================== -->
+
+
+<section class="wellness-goals">
+
+
+<h2>
+
+<i data-lucide="target"></i>
+
+
+Wellness Goals
+
+
+</h2>
+
+
+
+<div class="goal-card">
+
+
+<div class="goal-header">
+
+<h3>
+
+Weekly Fitness Goal
+
+</h3>
+
+
+<span>
+
+80%
+
+</span>
+
+
+</div>
+
+
+
+<div class="progress-bar">
+
+
+<div class="progress-fill health-progress">
+
+</div>
+
+
+</div>
+
+
+<p>
+
+8/10 workouts completed
+
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- ===========================
+        AI HEALTH COACH
+=========================== -->
+
+
+<section class="health-coach">
+
+
+<div class="coach-content">
+
+
+<i data-lucide="bot"></i>
+
+
+<div>
+
+
+<h2>
+
+LifeOS Health AI
+
+</h2>
+
+
+<p>
+
+
+Your energy level is highest between
+9AM - 1PM. Schedule important tasks
+during this period for better performance.
+
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<button class="ask-ai-btn">
+
+
+Ask Health AI
+
+
+</button>
+
+
+
+</section>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+<script src="../js/script.js"></script>
+
+
+<script>
+
+lucide.createIcons();
+
+</script>
+
+
+
+</body>
+
+
+</html>
