@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LifeOS AI Planner</title>
+
+
+<link rel="stylesheet" href="../css/style.css">
+
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+</head>
+
+
+<body>
+
+
+<div class="module-page">
+
+
+
+<!-- BACK BUTTON -->
+
+<button class="back-btn" onclick="goDashboard()">
+
+<i data-lucide="arrow-left"></i>
+
+Back to Dashboard
+
+</button>
+
+
+
+
+
+
+<div class="module-header">
+
+
+<h1>
+
+<i data-lucide="calendar-check"></i>
+
+AI Planner
+
+</h1>
+
+
+<p>
+
+Your intelligent AI task manager that organizes, prioritizes and optimizes your day.
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- AI TASK GENERATOR -->
+
+
+<section class="dashboard-box planner-ai">
+
+
+<h2>
+
+<i data-lucide="sparkles"></i>
+
+AI Daily Task Manager
+
+</h2>
+
+
+
+<p>
+
+AI generated tasks based on your goals and productivity patterns.
+
+</p>
+
+
+
+<button 
+class="analyze-btn"
+onclick="generateTasks()">
+
+
+<i data-lucide="bot"></i>
+
+Generate AI Tasks
+
+
+</button>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- TASK CARDS -->
+
+
+<section class="task-container" id="taskContainer">
+
+
+
+<div class="task-card blue">
+
+
+<div class="task-icon">
+
+<i data-lucide="briefcase"></i>
+
+</div>
+
+
+<h3>
+
+Complete Project Work
+
+</h3>
+
+
+<p>
+
+Finish important development tasks.
+
+</p>
+
+
+
+<span class="high">
+
+High Priority
+
+</span>
+
+
+
+<button onclick="completeTask(this)">
+
+Complete
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="task-card purple">
+
+
+<div class="task-icon">
+
+<i data-lucide="book-open"></i>
+
+</div>
+
+
+<h3>
+
+Learning Session
+
+</h3>
+
+
+<p>
+
+Practice new AI concepts for 1 hour.
+
+</p>
+
+
+<span class="medium">
+
+Medium Priority
+
+</span>
+
+
+<button onclick="completeTask(this)">
+
+Complete
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="task-card green">
+
+
+<div class="task-icon">
+
+<i data-lucide="heart"></i>
+
+</div>
+
+
+<h3>
+
+Health Activity
+
+</h3>
+
+
+<p>
+
+Complete daily wellness routine.
+
+</p>
+
+
+<span class="low">
+
+Low Priority
+
+</span>
+
+
+<button onclick="completeTask(this)">
+
+Complete
+
+</button>
+
+
+</div>
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- AI RECOMMENDATION -->
+
+
+<section class="ai-message">
+
+
+<i data-lucide="lightbulb"></i>
+
+
+<div>
+
+
+<h2>
+
+AI Smart Schedule
+
+</h2>
+
+
+<p id="schedule">
+
+Your AI recommends completing deep work tasks between 9AM - 12PM.
+
+</p>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+<script src="../js/script.js"></script>
+
+
+<script>
+
+lucide.createIcons();
+
+</script>
+
+
+
+</body>
+
+</html>
