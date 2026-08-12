@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LifeOS AI | Assistant</title>
+
+
+<link rel="stylesheet" href="../css/style.css">
+
+
+<!-- Icons -->
+<script src="https://unpkg.com/lucide@latest"></script>
+
+
+</head>
+
+
+<body>
+
+
+<div class="module-page assistant-page">
+
+
+
+<!-- =========================
+        TOP HEADER
+========================= -->
+
+
+<div class="assistant-topbar">
+
+
+<div class="module-header">
+
+
+<h1>
+
+<i data-lucide="bot"></i>
+
+LifeOS AI Companion
+
+</h1>
+
+
+<p>
+
+Your intelligent assistant that understands your goals,
+habits, health and daily activities.
+
+</p>
+
+
+</div>
+
+
+
+
+<button class="back-btn" onclick="goDashboard()">
+
+
+<i data-lucide="arrow-left"></i>
+
+
+Dashboard
+
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- =========================
+        AI CORE SECTION
+========================= -->
+
+
+<section class="ai-core-section">
+
+
+<div class="ai-core">
+
+
+<div class="core-circle">
+
+
+<i data-lucide="brain-circuit"></i>
+
+
+</div>
+
+
+
+<h2>
+
+AI Intelligence Core
+
+</h2>
+
+
+<h1>
+
+96%
+
+</h1>
+
+
+<p>
+
+Learning from your lifestyle patterns
+
+</p>
+
+
+
+<div class="ai-status">
+
+
+<span></span>
+
+AI Online
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+<div class="daily-summary">
+
+
+<h2>
+
+<i data-lucide="sparkles"></i>
+
+AI Daily Summary
+
+</h2>
+
+
+<div class="summary-item">
+
+
+<h3>
+Productivity
+</h3>
+
+
+<div class="summary-bar">
+
+<div class="productivity-bar"></div>
+
+</div>
+
+
+<span>
+
+82%
+
+</span>
+
+
+</div>
+
+
+
+
+
+<div class="summary-item">
+
+
+<h3>
+Health
+</h3>
+
+
+<div class="summary-bar">
+
+<div class="health-bar"></div>
+
+</div>
+
+
+<span>
+
+91%
+
+</span>
+
+
+</div>
+
+
+
+
+
+
+<div class="summary-item">
+
+
+<h3>
+Finance
+</h3>
+
+
+<div class="summary-bar">
+
+<div class="finance-bar"></div>
+
+</div>
+
+
+<span>
+
+76%
+
+</span>
+
+
+</div>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- =========================
+        CHAT SECTION
+========================= -->
+
+
+<section class="chat-container">
+
+
+
+<div class="chat-header">
+
+
+<i data-lucide="bot"></i>
+
+
+<h2>
+
+LifeOS AI Chat
+
+</h2>
+
+
+<span>
+
+Online
+
+</span>
+
+
+</div>
+
+
+
+
+
+<div class="chat-box" id="chatBox">
+
+
+
+<div class="ai-message-bubble">
+
+
+<i data-lucide="bot"></i>
+
+
+<p>
+
+Hello 👋
+
+I analyzed your day.
+You have 3 important tasks remaining.
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="user-message-bubble">
+
+
+<p>
+
+How can I improve my productivity?
+
+</p>
+
+
+</div>
+
+
+    <div class="ai-message-bubble">
+
+<i data-lucide="bot"></i>
+
+<p id="initialAIMessage">
+
+Analyzing your LifeOS data...
+
+</p>
+
+</div>
+
+
+<i data-lucide="bot"></i>
+
+
+<p>
+
+Your focus level is highest in morning hours.
+Schedule deep work between 9 AM - 12 PM.
+
+</p>
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+<div class="chat-input">
+
+
+<input 
+type="text"
+id="userInput"
+placeholder="Ask your AI assistant..."
+>
+
+
+
+<button onclick="sendMessage()">
+
+
+<i data-lucide="send"></i>
+
+
+</button>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- =========================
+        QUICK ACTIONS
+========================= -->
+
+
+<section class="quick-actions">
+
+
+<h2>
+
+<i data-lucide="zap"></i>
+
+Quick AI Actions
+
+</h2>
+
+
+
+<div class="action-grid">
+
+
+
+<div class="action-card">
+
+
+<i data-lucide="calendar"></i>
+
+
+<h3>
+
+Plan My Day
+
+</h3>
+
+
+<p>
+
+Generate smart schedule
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="action-card">
+
+
+<i data-lucide="wallet"></i>
+
+
+<h3>
+
+Finance Analysis
+
+</h3>
+
+
+<p>
+
+Review spending habits
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="action-card">
+
+
+<i data-lucide="heart-pulse"></i>
+
+
+<h3>
+
+Health Advice
+
+</h3>
+
+
+<p>
+
+Get wellness suggestions
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="action-card">
+
+
+<i data-lucide="target"></i>
+
+
+<h3>
+
+Goal Tracking
+
+</h3>
+
+
+<p>
+
+Monitor progress
+
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- =========================
+        AI PERSONALITY
+========================= -->
+
+
+<section class="ai-personality">
+
+
+<h2>
+
+<i data-lucide="brain"></i>
+
+AI Personality Mode
+
+</h2>
+
+
+
+
+<div class="personality-grid">
+
+
+
+<div class="personality-card active">
+
+
+<h3>
+
+🧠 Strategic Mode
+
+</h3>
+
+
+<p>
+
+Career and goal planning
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="personality-card">
+
+
+<h3>
+
+⚡ Productivity Mode
+
+</h3>
+
+
+<p>
+
+Task and time optimization
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="personality-card">
+
+
+<h3>
+
+🌱 Wellness Mode
+
+</h3>
+
+
+<p>
+
+Health and lifestyle balance
+
+</p>
+
+
+</div>
+
+
+
+
+<div class="personality-card">
+
+
+<h3>
+
+💼 Professional Mode
+
+</h3>
+
+
+<p>
+
+Work improvement
+
+</p>
+
+
+</div>
+
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- =========================
+        AI ANALYTICS
+========================= -->
+
+
+<section class="ai-analytics">
+
+
+<div class="analytics-card">
+
+
+<i data-lucide="brain"></i>
+
+
+<h3>
+
+Intelligence
+
+</h3>
+
+
+<h1>
+
+96%
+
+</h1>
+
+
+</div>
+
+
+
+
+
+<div class="analytics-card">
+
+
+<i data-lucide="message-circle"></i>
+
+
+<h3>
+
+Questions Answered
+
+</h3>
+
+
+<h1>
+
+248
+
+</h1>
+
+
+</div>
+
+
+
+
+
+
+<div class="analytics-card">
+
+
+<i data-lucide="check-circle"></i>
+
+
+<h3>
+
+Tasks Automated
+
+</h3>
+
+
+<h1>
+
+56
+
+</h1>
+
+
+</div>
+
+
+
+
+
+
+<div class="analytics-card">
+
+
+<i data-lucide="sparkles"></i>
+
+
+<h3>
+
+Insights Generated
+
+</h3>
+
+
+<h1>
+
+124
+
+</h1>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- =========================
+        AI MEMORY
+========================= -->
+
+
+<section class="ai-memory">
+
+
+<h2>
+
+<i data-lucide="database"></i>
+
+AI Memory
+
+</h2>
+
+
+
+<div class="memory-list">
+
+
+<p>
+
+✓ You prefer morning productivity
+
+</p>
+
+
+<p>
+
+✓ Your learning sessions are consistent
+
+</p>
+
+
+<p>
+
+✓ You focus better with planned schedules
+
+</p>
+
+
+<p>
+
+✓ Your financial goals are active
+
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- =========================
+        SMART RECOMMENDATIONS
+========================= -->
+
+
+<section class="smart-recommendations">
+
+
+<h2>
+
+<i data-lucide="lightbulb"></i>
+
+Smart AI Recommendations
+
+</h2>
+
+
+
+<div class="recommend-grid">
+
+
+
+<div class="recommend-card">
+
+
+<h3>
+
+⚡ Productivity Alert
+
+</h3>
+
+
+<p>
+
+Complete important tasks before noon.
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="recommend-card">
+
+
+<h3>
+
+💰 Finance Alert
+
+</h3>
+
+
+<p>
+
+Your spending increased this week.
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="recommend-card">
+
+
+<h3>
+
+❤️ Health Alert
+
+</h3>
+
+
+<p>
+
+Maintain your current sleep routine.
+
+</p>
+
+
+</div>
+
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- =========================
+        VOICE AI
+========================= -->
+
+
+<section class="voice-ai">
+
+
+<div>
+
+
+<i data-lucide="mic"></i>
+
+
+<h2>
+
+Talk With AI
+
+</h2>
+
+
+<p>
+
+Voice assistant is ready
+
+</p>
+
+
+</div>
+
+
+
+
+<button>
+
+
+Start Listening
+
+
+</button>
+
+
+
+</section>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<script src="../js/script.js"></script>
+
+
+<script>
+
+lucide.createIcons();
+
+</script>
+
+
+
+</body>
+
+
+</html>
