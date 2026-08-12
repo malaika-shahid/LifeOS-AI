@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+
+
+<meta charset="UTF-8">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>LifeOS AI Brain</title>
+
+
+
+<link rel="stylesheet" href="../css/style.css">
+
+
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+
+
+</head>
+
+
+
+
+<body>
+
+
+
+<div class="module-page">
+
+
+<!-- BACK TO DASHBOARD -->
+
+<button class="back-btn" onclick="goDashboard()">
+
+<i data-lucide="arrow-left"></i>
+
+Back to Dashboard
+
+</button>
+<!-- HEADER -->
+
+<div class="module-header">
+
+
+<h1>
+
+<i data-lucide="brain-circuit"></i>
+
+AI Brain
+
+</h1>
+
+
+
+<p>
+
+Your personal intelligence system that understands,
+learns and optimizes your life.
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- AI ANALYSIS -->
+
+
+<section class="dashboard-box ai-analysis-box">
+
+
+
+<h2>
+
+<i data-lucide="sparkles"></i>
+
+AI Life Analysis
+
+</h2>
+
+
+
+<p class="ai-subtitle">
+
+AI analyzes your productivity, health and financial patterns.
+
+</p>
+
+
+
+
+<button 
+class="analyze-btn"
+onclick="analyzeLife()">
+
+
+<i data-lucide="brain"></i>
+
+Analyze My Life
+
+
+</button>
+
+
+
+
+
+
+
+<div class="ai-analysis">
+
+
+
+
+
+<div class="analysis-card">
+
+
+<i data-lucide="brain-circuit"></i>
+
+
+<h3>
+
+Life Intelligence Score
+
+</h3>
+
+
+
+<h2 id="lifeScore">
+
+0%
+
+</h2>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="analysis-card">
+
+
+<i data-lucide="zap"></i>
+
+
+<h3>
+
+Productivity Level
+
+</h3>
+
+
+
+<h2 id="productivity">
+
+--
+
+</h2>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="analysis-card">
+
+
+<i data-lucide="sparkles"></i>
+
+
+<h3>
+
+AI Insight
+
+</h3>
+
+
+
+<p id="aiInsight">
+
+Click analyze to generate insights.
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- INTELLIGENCE CARDS -->
+
+
+<section class="cards">
+
+
+
+
+
+<div class="card gradient-blue">
+
+
+<i data-lucide="brain"></i>
+
+
+<h3>
+
+AI Intelligence Score
+
+</h3>
+
+
+<h2>
+
+94%
+
+</h2>
+
+
+<p>
+
+Your AI adaptation level is excellent.
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="card gradient-purple">
+
+
+<i data-lucide="smile"></i>
+
+
+<h3>
+
+Current Mood
+
+</h3>
+
+
+
+<h2>
+
+Focused
+
+</h2>
+
+
+<p>
+
+Based on your activity patterns.
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="card gradient-green">
+
+
+<i data-lucide="activity"></i>
+
+
+<h3>
+
+Productivity Prediction
+
+</h3>
+
+
+
+<h2>
+
+High
+
+</h2>
+
+
+
+<p>
+
+Peak performance expected today.
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="card gradient-orange">
+
+
+<i data-lucide="clock"></i>
+
+
+<h3>
+
+Best Working Time
+
+</h3>
+
+
+
+<h2>
+
+9AM - 12PM
+
+</h2>
+
+
+
+<p>
+
+Your highest focus period.
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- AI INSIGHT -->
+
+
+<section class="ai-message">
+
+
+<i data-lucide="sparkles"></i>
+
+
+
+
+<div>
+
+
+<h2>
+
+AI Personal Insight
+
+</h2>
+
+
+
+<p>
+
+Your learning consistency improved by 18%.
+Continue morning study sessions to achieve your goals faster.
+
+</p>
+
+
+
+</div>
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- FUTURE PREDICTION -->
+
+
+<section class="prediction">
+
+
+
+<h2>
+
+<i data-lucide="chart-line"></i>
+
+Future Prediction
+
+</h2>
+
+
+
+
+
+
+<div class="prediction-box">
+
+
+
+
+
+<div>
+
+
+<h3>
+
+Career Growth
+
+</h3>
+
+
+<span>
+
++87%
+
+</span>
+
+
+</div>
+
+
+
+
+
+
+
+<div>
+
+
+<h3>
+
+Financial Stability
+
+</h3>
+
+
+<span>
+
++72%
+
+</span>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div>
+
+
+<h3>
+
+Health Improvement
+
+</h3>
+
+
+<span>
+
++90%
+
+</span>
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- SMART RECOMMENDATIONS -->
+
+
+<section class="recommendation">
+
+
+
+<h2>
+
+<i data-lucide="lightbulb"></i>
+
+Smart Recommendations
+
+</h2>
+
+
+
+
+
+<ul id="recommendations">
+
+
+
+<li>
+
+Complete your important tasks before noon.
+
+</li>
+
+
+
+<li>
+
+Take a 15-minute recovery break after 90 minutes.
+
+</li>
+
+
+
+
+<li>
+
+Increase learning time by 20 minutes daily.
+
+</li>
+
+
+
+
+<li>
+
+Review your weekly goals tonight.
+
+</li>
+
+
+
+
+</ul>
+
+
+
+
+</section>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- JavaScript -->
+
+
+<script src="../js/script.js"></script>
+
+
+
+<script>
+
+
+lucide.createIcons();
+
+
+</script>
+
+
+
+</body>
+
+
+</html>
