@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LifeOS AI | Settings</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+</head>
+
+
+<body>
+
+
+<div class="module-page settings-page">
+
+
+    <!-- =========================================
+         SETTINGS HEADER
+    ========================================== -->
+
+    <div class="settings-topbar">
+
+
+        <div class="module-header">
+
+            <div class="settings-title">
+
+                <div class="settings-title-icon">
+
+                    <i data-lucide="settings"></i>
+
+                </div>
+
+
+                <div>
+
+                    <h1>
+                        LifeOS Settings
+                    </h1>
+
+                    <p>
+                        Personalize your AI-powered digital life.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Back to Dashboard -->
+
+        <button
+            class="back-btn"
+            onclick="goDashboard()"
+        >
+
+            <i data-lucide="arrow-left"></i>
+
+            Back to Dashboard
+
+        </button>
+
+
+    </div>
+
+
+
+    <!-- =========================================
+         PROFILE & PERSONALIZATION
+    ========================================== -->
+
+    <section class="settings-section profile-settings">
+
+
+        <!-- Section Header -->
+
+        <div class="settings-section-header">
+
+            <div class="settings-icon profile-settings-icon">
+
+                <i data-lucide="user-round"></i>
+
+            </div>
+
+
+            <div>
+
+                <h2>
+                    Profile & Personalization
+                </h2>
+
+                <p>
+                    Customize how LifeOS understands and supports you.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Profile Card -->
+
+        <div class="profile-card">
+
+
+            <!-- Avatar -->
+
+            <div class="profile-avatar">
+
+                <span>MS</span>
+
+                <div class="avatar-status"></div>
+
+            </div>
+
+
+
+            <!-- Profile Information -->
+
+            <div class="profile-details">
+
+                <h3>
+                    Malaika Shahid
+                </h3>
+
+                <p>
+                    LifeOS AI User
+                </p>
+
+                <span class="account-status">
+
+                    <span></span>
+
+                    Account Active
+
+                </span>
+
+            </div>
+
+
+
+            <!-- Edit Profile -->
+
+            <button
+                class="edit-profile-btn"
+                onclick="editProfile()"
+            >
+
+                <i data-lucide="pencil"></i>
+
+                Edit Profile
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- Personalization Grid -->
+
+        <div class="personalization-grid">
+
+
+            <!-- Peak Working Time -->
+
+            <div class="personalization-card">
+
+
+                <div class="personalization-icon">
+
+                    <i data-lucide="clock-3"></i>
+
+                </div>
+
+
+                <h3>
+                    Peak Working Time
+                </h3>
+
+
+                <p>
+                    When you usually focus best.
+                </p>
+
+
+                <select id="workingTime">
+
+                    <option value="morning">
+                        Morning · 9 AM – 12 PM
+                    </option>
+
+                    <option value="afternoon">
+                        Afternoon · 1 PM – 4 PM
+                    </option>
+
+                    <option value="evening">
+                        Evening · 6 PM – 9 PM
+                    </option>
+
+                </select>
+
+
+            </div>
+
+
+
+            <!-- Productivity Style -->
+
+            <div class="personalization-card">
+
+
+                <div class="personalization-icon">
+
+                    <i data-lucide="zap"></i>
+
+                </div>
+
+
+                <h3>
+                    Productivity Style
+                </h3>
+
+
+                <p>
+                    How LifeOS plans your tasks.
+                </p>
+
+
+                <select id="productivityStyle">
+
+                    <option value="focused">
+                        Deep Focus
+                    </option>
+
+                    <option value="balanced">
+                        Balanced
+                    </option>
+
+                    <option value="flexible">
+                        Flexible
+                    </option>
+
+                </select>
+
+
+            </div>
+
+
+
+            <!-- AI Communication -->
+
+            <div class="personalization-card">
+
+
+                <div class="personalization-icon">
+
+                    <i data-lucide="message-circle"></i>
+
+                </div>
+
+
+                <h3>
+                    AI Communication
+                </h3>
+
+
+                <p>
+                    Choose how your AI communicates.
+                </p>
+
+
+                <select id="aiCommunication">
+
+                    <option value="friendly">
+                        Friendly
+                    </option>
+
+                    <option value="professional">
+                        Professional
+                    </option>
+
+                    <option value="concise">
+                        Short & Direct
+                    </option>
+
+                </select>
+
+
+            </div>
+
+
+
+            <!-- Daily Focus Goal -->
+
+            <div class="personalization-card">
+
+
+                <div class="personalization-icon">
+
+                    <i data-lucide="target"></i>
+
+                </div>
+
+
+                <h3>
+                    Daily Focus Goal
+                </h3>
+
+
+                <p>
+                    Your preferred daily focus target.
+                </p>
+
+
+                <select id="dailyGoal">
+
+                    <option value="2">
+                        2 Hours
+                    </option>
+
+                    <option value="4" selected>
+                        4 Hours
+                    </option>
+
+                    <option value="6">
+                        6 Hours
+                    </option>
+
+                    <option value="8">
+                        8 Hours
+                    </option>
+
+                </select>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================================
+         AI PREFERENCES
+    ========================================== -->
+
+    <section class="settings-section">
+
+
+        <div class="settings-section-header">
+
+            <div class="settings-icon ai-settings-icon">
+
+                <i data-lucide="brain-circuit"></i>
+
+            </div>
+
+
+            <div>
+
+                <h2>
+                    AI Preferences
+                </h2>
+
+                <p>
+                    Control how LifeOS AI assists you.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="settings-list">
+
+
+            <!-- Smart Insights -->
+
+            <div class="setting-item">
+
+
+                <div class="setting-info">
+
+                    <div class="setting-item-icon">
+
+                        <i data-lucide="sparkles"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            Smart AI Insights
+                        </h3>
+
+                        <p>
+                            Generate personalized recommendations
+                            based on your activity.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <label class="toggle">
+
+                    <input
+                        type="checkbox"
+                        id="aiInsights"
+                        checked
+                    >
+
+                    <span class="slider"></span>
+
+                </label>
+
+
+            </div>
+
+
+
+            <!-- AI Predictions -->
+
+            <div class="setting-item">
+
+
+                <div class="setting-info">
+
+                    <div class="setting-item-icon">
+
+                        <i data-lucide="trending-up"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            AI Predictions
+                        </h3>
+
+                        <p>
+                            Enable future predictions based on
+                            your LifeOS activity.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <label class="toggle">
+
+                    <input
+                        type="checkbox"
+                        id="aiPredictions"
+                        checked
+                    >
+
+                    <span class="slider"></span>
+
+                </label>
+
+
+            </div>
+
+
+
+            <!-- AI Assistant -->
+
+            <div class="setting-item">
+
+
+                <div class="setting-info">
+
+                    <div class="setting-item-icon">
+
+                        <i data-lucide="bot"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            AI Assistant Access
+                        </h3>
+
+                        <p>
+                            Allow the AI Assistant to access
+                            your LifeOS module data.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <label class="toggle">
+
+                    <input
+                        type="checkbox"
+                        id="aiAssistant"
+                        checked
+                    >
+
+                    <span class="slider"></span>
+
+                </label>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================================
+         NOTIFICATIONS
+    ========================================== -->
+
+    <section class="settings-section">
+
+
+        <div class="settings-section-header">
+
+            <div class="settings-icon notification-settings-icon">
+
+                <i data-lucide="bell"></i>
+
+            </div>
+
+
+            <div>
+
+                <h2>
+                    Notifications
+                </h2>
+
+                <p>
+                    Choose which LifeOS alerts you receive.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="settings-list">
+
+
+            <!-- Planner Notifications -->
+
+            <div class="setting-item">
+
+
+                <div class="setting-info">
+
+                    <div class="setting-item-icon">
+
+                        <i data-lucide="calendar-clock"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            Planner Reminders
+                        </h3>
+
+                        <p>
+                            Remind you about upcoming tasks
+                            and deadlines.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <label class="toggle">
+
+                    <input
+                        type="checkbox"
+                        id="plannerNotifications"
+                        checked
+                    >
+
+                    <span class="slider"></span>
+
+                </label>
+
+
+            </div>
+
+
+
+            <!-- Finance Notifications -->
+
+            <div class="setting-item">
+
+
+                <div class="setting-info">
+
+                    <div class="setting-item-icon">
+
+                        <i data-lucide="wallet"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            Finance Alerts
+                        </h3>
+
+                        <p>
+                            Receive budget and spending alerts.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <label class="toggle">
+
+                    <input
+                        type="checkbox"
+                        id="financeNotifications"
+                        checked
+                    >
+
+                    <span class="slider"></span>
+
+                </label>
+
+
+            </div>
+
+
+
+            <!-- Health Notifications -->
+
+            <div class="setting-item">
+
+
+                <div class="setting-info">
+
+                    <div class="setting-item-icon">
+
+                        <i data-lucide="heart-pulse"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            Health Reminders
+                        </h3>
+
+                        <p>
+                            Receive wellness and health reminders.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <label class="toggle">
+
+                    <input
+                        type="checkbox"
+                        id="healthNotifications"
+                        checked
+                    >
+
+                    <span class="slider"></span>
+
+                </label>
+
+
+            </div>
+
+
+
+            <!-- Daily Summary -->
+
+            <div class="setting-item">
+
+
+                <div class="setting-info">
+
+                    <div class="setting-item-icon">
+
+                        <i data-lucide="sun"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            Daily AI Summary
+                        </h3>
+
+                        <p>
+                            Receive your personalized daily
+                            LifeOS summary.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <label class="toggle">
+
+                    <input
+                        type="checkbox"
+                        id="dailySummary"
+                        checked
+                    >
+
+                    <span class="slider"></span>
+
+                </label>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================================
+         APPEARANCE
+    ========================================== -->
+
+    <section class="settings-section">
+
+
+        <div class="settings-section-header">
+
+            <div class="settings-icon appearance-settings-icon">
+
+                <i data-lucide="palette"></i>
+
+            </div>
+
+
+            <div>
+
+                <h2>
+                    Appearance
+                </h2>
+
+                <p>
+                    Customize the visual experience of LifeOS.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="appearance-options">
+
+
+            <!-- Cyber Dark -->
+
+            <button
+                class="theme-option active"
+                onclick="selectTheme(this, 'dark')"
+            >
+
+                <div class="theme-preview dark-preview">
+
+                    <span></span>
+
+                    <span></span>
+
+                    <span></span>
+
+                </div>
+
+
+                <h3>
+                    Cyber Dark
+                </h3>
+
+
+                <p>
+                    Recommended
+                </p>
+
+
+            </button>
+
+
+
+            <!-- Midnight -->
+
+            <button
+                class="theme-option"
+                onclick="selectTheme(this, 'midnight')"
+            >
+
+                <div class="theme-preview midnight-preview">
+
+                    <span></span>
+
+                    <span></span>
+
+                    <span></span>
+
+                </div>
+
+
+                <h3>
+                    Midnight AI
+                </h3>
+
+
+                <p>
+                    Deep blue interface
+                </p>
+
+
+            </button>
+
+
+
+            <!-- Light -->
+
+            <button
+                class="theme-option"
+                onclick="selectTheme(this, 'light')"
+            >
+
+                <div class="theme-preview light-preview">
+
+                    <span></span>
+
+                    <span></span>
+
+                    <span></span>
+
+                </div>
+
+
+                <h3>
+                    Light Mode
+                </h3>
+
+
+                <p>
+                    Clean interface
+                </p>
+
+
+            </button>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================================
+         DASHBOARD PREFERENCES
+    ========================================== -->
+
+    <section class="settings-section">
+
+
+        <div class="settings-section-header">
+
+            <div class="settings-icon dashboard-settings-icon">
+
+                <i data-lucide="layout-dashboard"></i>
+
+            </div>
+
+
+            <div>
+
+                <h2>
+                    Dashboard Preferences
+                </h2>
+
+                <p>
+                    Choose what appears on your dashboard.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="settings-list">
+
+
+            <!-- Performance Analytics -->
+
+            <div class="setting-item">
+
+
+                <div class="setting-info">
+
+                    <div class="setting-item-icon">
+
+                        <i data-lucide="chart-no-axes-combined"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            Performance Analytics
+                        </h3>
+
+                        <p>
+                            Display your Life Performance graph.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <label class="toggle">
+
+                    <input
+                        type="checkbox"
+                        id="performanceAnalytics"
+                        checked
+                    >
+
+                    <span class="slider"></span>
+
+                </label>
+
+
+            </div>
+
+
+
+            <!-- AI Recommendations -->
+
+            <div class="setting-item">
+
+
+                <div class="setting-info">
+
+                    <div class="setting-item-icon">
+
+                        <i data-lucide="lightbulb"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            AI Recommendations
+                        </h3>
+
+                        <p>
+                            Show AI suggestions on your dashboard.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <label class="toggle">
+
+                    <input
+                        type="checkbox"
+                        id="dashboardRecommendations"
+                        checked
+                    >
+
+                    <span class="slider"></span>
+
+                </label>
+
+
+            </div>
+
+
+
+            <!-- Quick Stats -->
+
+            <div class="setting-item">
+
+
+                <div class="setting-info">
+
+                    <div class="setting-item-icon">
+
+                        <i data-lucide="gauge"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            Quick Stats
+                        </h3>
+
+                        <p>
+                            Display your key LifeOS metrics.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <label class="toggle">
+
+                    <input
+                        type="checkbox"
+                        id="quickStats"
+                        checked
+                    >
+
+                    <span class="slider"></span>
+
+                </label>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================================
+         PRIVACY & DATA
+    ========================================== -->
+
+    <section class="settings-section privacy-section">
+
+
+        <div class="settings-section-header">
+
+            <div class="settings-icon privacy-settings-icon">
+
+                <i data-lucide="shield-check"></i>
+
+            </div>
+
+
+            <div>
+
+                <h2>
+                    Privacy & Data
+                </h2>
+
+                <p>
+                    Manage your LifeOS data preferences.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="privacy-options">
+
+
+            <!-- Manage Data -->
+
+            <button onclick="manageData()">
+
+                <i data-lucide="database"></i>
+
+                <span>
+                    Manage My Data
+                </span>
+
+            </button>
+
+
+
+            <!-- Export Data -->
+
+            <button onclick="exportData()">
+
+                <i data-lucide="download"></i>
+
+                <span>
+                    Export Data
+                </span>
+
+            </button>
+
+
+
+            <!-- Clear Data -->
+
+            <button
+                class="danger-btn"
+                onclick="clearData()"
+            >
+
+                <i data-lucide="trash-2"></i>
+
+                <span>
+                    Clear Data
+                </span>
+
+            </button>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================================
+         SAVE SETTINGS
+    ========================================== -->
+
+    <section class="save-settings-area">
+
+
+        <div>
+
+            <h3>
+                Ready to save your preferences?
+            </h3>
+
+            <p id="settingsMessage">
+                Your changes will be saved locally.
+            </p>
+
+        </div>
+
+
+        <button
+            class="save-settings-btn"
+            onclick="saveSettings()"
+        >
+
+            <i data-lucide="save"></i>
+
+            Save Settings
+
+        </button>
+
+
+    </section>
+
+
+
+</div>
+
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================== -->
+
+<script src="../js/script.js"></script>
+
+
+<script>
+
+    lucide.createIcons();
+
+</script>
+
+
+</body>
+
+</html>
