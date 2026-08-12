@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LifeOS AI | Finance</title>
+
+<link rel="stylesheet" href="../css/style.css">
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<div class="module-page">
+
+    <!-- ===========================
+            TOP BAR
+    ============================ -->
+
+    <div class="finance-topbar">
+
+        <div class="module-header">
+
+            <h1>
+                <i data-lucide="wallet"></i>
+                AI Finance
+            </h1>
+
+            <p>
+                Your intelligent financial command center powered by AI.
+            </p>
+
+        </div>
+
+        <button class="back-btn" onclick="goDashboard()">
+
+            <i data-lucide="arrow-left"></i>
+
+            Dashboard
+
+        </button>
+
+    </div>
+
+
+
+    <!-- ===========================
+            AI OVERVIEW
+    ============================ -->
+
+    <section class="finance-overview">
+
+        <div class="finance-card balance">
+
+            <div class="card-icon">
+                <i data-lucide="wallet"></i>
+            </div>
+
+            <h4>Total Balance</h4>
+
+            <h2 class="counter" data-target="12840">
+                $0
+            </h2>
+
+            <span class="positive">
+
+                <i data-lucide="trending-up"></i>
+
+                +8.5% this month
+
+            </span>
+
+        </div>
+
+
+
+        <div class="finance-card income">
+
+            <div class="card-icon">
+                <i data-lucide="arrow-down-circle"></i>
+            </div>
+
+            <h4>Monthly Income</h4>
+
+            <h2 class="counter" data-target="3250">
+                $0
+            </h2>
+
+            <span class="positive">
+
+                <i data-lucide="badge-check"></i>
+
+                Stable Income
+
+            </span>
+
+        </div>
+
+
+
+        <div class="finance-card expense">
+
+            <div class="card-icon">
+                <i data-lucide="arrow-up-circle"></i>
+            </div>
+
+            <h4>Monthly Expenses</h4>
+
+            <h2 class="counter" data-target="2180">
+                $0
+            </h2>
+
+            <span class="warning">
+
+                <i data-lucide="triangle-alert"></i>
+
+                67% of income
+
+            </span>
+
+        </div>
+
+
+
+        <div class="finance-card savings">
+
+            <div class="card-icon">
+                <i data-lucide="trending-up"></i>
+            </div>
+
+            <h4>Total Savings</h4>
+
+            <h2 class="counter" data-target="1070">
+                $0
+            </h2>
+
+            <span class="positive">
+
+                <i data-lucide="circle-check"></i>
+
+                Goal On Track
+
+            </span>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ===========================
+        AI FINANCIAL HEALTH
+    ============================ -->
+
+    <section class="finance-health">
+
+        <div class="health-card">
+
+            <h2>
+
+                <i data-lucide="shield-check"></i>
+
+                Financial Health Score
+
+            </h2>
+
+            <div class="score-circle">
+
+                <h1 id="financeScore">
+
+                    91
+
+                </h1>
+
+                <span>Excellent</span>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="health-card">
+
+            <h2>
+
+                <i data-lucide="sparkles"></i>
+
+                AI Insight
+
+            </h2>
+
+            <p id="financeInsight">
+
+                Your spending habits are balanced. AI predicts you can increase
+                your savings by 18% this month if entertainment expenses remain
+                below your average.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ===========================
+        CHARTS
+    ============================ -->
+
+    <section class="finance-charts">
+
+        <div class="chart-card">
+
+            <h2>
+
+                <i data-lucide="bar-chart-3"></i>
+
+                Income vs Expenses
+
+            </h2>
+
+            <canvas id="incomeChart"></canvas>
+
+        </div>
+
+
+
+        <div class="chart-card">
+
+            <h2>
+
+                <i data-lucide="pie-chart"></i>
+
+                Spending Distribution
+
+            </h2>
+
+            <canvas id="expenseChart"></canvas>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Next sections -->
+     <!-- ===========================
+        AI SMART RECOMMENDATIONS
+=========================== -->
+
+<section class="finance-recommendations">
+
+    <h2>
+
+        <i data-lucide="sparkles"></i>
+
+        AI Smart Recommendations
+
+    </h2>
+
+    <div class="recommendation-grid">
+
+        <div class="recommend-card">
+
+            <i data-lucide="piggy-bank"></i>
+
+            <h3>Increase Savings</h3>
+
+            <p>
+
+                AI predicts you can save an extra
+                <strong>$180</strong> this month by reducing food delivery expenses.
+
+            </p>
+
+        </div>
+
+        <div class="recommend-card">
+
+            <i data-lucide="credit-card"></i>
+
+            <h3>Subscription Alert</h3>
+
+            <p>
+
+                You haven't used Netflix for 19 days.
+                Consider pausing your subscription.
+
+            </p>
+
+        </div>
+
+        <div class="recommend-card">
+
+            <i data-lucide="trending-up"></i>
+
+            <h3>Investment Opportunity</h3>
+
+            <p>
+
+                Based on your cash flow,
+                investing $250 monthly could improve long-term savings.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+<!-- ===========================
+        RECENT TRANSACTIONS
+=========================== -->
+
+<section class="transactions-section">
+
+    <h2>
+
+        <i data-lucide="receipt"></i>
+
+        Recent Transactions
+
+    </h2>
+
+    <div class="transaction-list">
+
+        <div class="transaction">
+
+            <div class="left">
+
+                <i data-lucide="shopping-cart"></i>
+
+                <div>
+
+                    <h3>Grocery Store</h3>
+
+                    <p>Today • 11:30 AM</p>
+
+                </div>
+
+            </div>
+
+            <span class="expense">-$84</span>
+
+        </div>
+
+
+
+
+
+        <div class="transaction">
+
+            <div class="left">
+
+                <i data-lucide="coffee"></i>
+
+                <div>
+
+                    <h3>Coffee Shop</h3>
+
+                    <p>Yesterday • 4:20 PM</p>
+
+                </div>
+
+            </div>
+
+            <span class="expense">-$12</span>
+
+        </div>
+
+
+
+
+
+
+        <div class="transaction">
+
+            <div class="left">
+
+                <i data-lucide="briefcase-business"></i>
+
+                <div>
+
+                    <h3>Monthly Salary</h3>
+
+                    <p>1 July</p>
+
+                </div>
+
+            </div>
+
+            <span class="income">+$3,250</span>
+
+        </div>
+
+
+
+
+
+
+
+        <div class="transaction">
+
+            <div class="left">
+
+                <i data-lucide="film"></i>
+
+                <div>
+
+                    <h3>Netflix</h3>
+
+                    <p>2 July</p>
+
+                </div>
+
+            </div>
+
+            <span class="expense">-$15</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+
+
+<!-- ===========================
+       SAVINGS GOAL
+=========================== -->
+
+<section class="saving-section">
+
+    <h2>
+
+        <i data-lucide="target"></i>
+
+        Savings Goal
+
+    </h2>
+
+    <div class="saving-card">
+
+        <div class="saving-top">
+
+            <h3>Emergency Fund</h3>
+
+            <span>82%</span>
+
+        </div>
+
+        <div class="progress-bar">
+
+            <div class="progress-fill" id="savingProgress"></div>
+
+        </div>
+
+        <div class="saving-bottom">
+
+            <span>$4,100 Saved</span>
+
+            <span>Goal $5,000</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+
+
+<!-- ===========================
+      AI FINANCIAL FORECAST
+=========================== -->
+
+<section class="forecast-section">
+
+    <h2>
+
+        <i data-lucide="brain-circuit"></i>
+
+        AI Monthly Forecast
+
+    </h2>
+
+    <div class="forecast-grid">
+
+        <div class="forecast-card">
+
+            <h1>+$520</h1>
+
+            <p>Expected Savings Next Month</p>
+
+        </div>
+
+        <div class="forecast-card">
+
+            <h1>94%</h1>
+
+            <p>Budget Success Probability</p>
+
+        </div>
+
+        <div class="forecast-card">
+
+            <h1>Low Risk</h1>
+
+            <p>Financial Stability Prediction</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+
+
+<!-- ===========================
+      AI FINANCE ASSISTANT
+=========================== -->
+
+<section class="finance-ai-box">
+
+    <div class="assistant-left">
+
+        <i data-lucide="bot"></i>
+
+        <div>
+
+            <h2>LifeOS Finance AI</h2>
+
+            <p>
+
+                Based on your financial behavior,
+                your spending is well controlled.
+                You are likely to reach your savings goal
+                before the end of the year.
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <button class="ask-ai-btn">
+
+        Ask AI
+
+    </button>
+
+</section>
+
+    <!-- AI Recommendations -->
+    <!-- Recent Transactions -->
+    <!-- Savings Goal -->
+
+</div>
+
+<script src="../js/script.js"></script>
+
+<script>
+
+lucide.createIcons();
+
+</script>
+
+</body>
+
+</html>
