@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>LifeOS AI | Personal Digital Operating System</title>
+
+
+<!-- CSS -->
+<link rel="stylesheet" href="css/style.css">
+
+
+<!-- Icons -->
+<script src="https://unpkg.com/lucide@latest"></script>
+
+
+<!-- Chart -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+</head>
+
+
+<body>
+
+
+<div class="app">
+
+
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar">
+
+
+<div class="logo">
+
+<i data-lucide="brain-circuit"></i>
+
+<h2>LifeOS AI</h2>
+
+</div>
+
+
+
+<ul>
+
+
+<li class="active">
+
+<i data-lucide="layout-dashboard"></i>
+
+Dashboard
+
+</li>
+
+
+
+<li onclick="openModule('modules/ai-brain.html')">
+
+<i data-lucide="sparkles"></i>
+
+AI Brain
+
+</li>
+
+
+
+<li onclick="openModule('modules/planner.html')">
+
+<i data-lucide="calendar"></i>
+
+Planner
+
+</li>
+
+
+
+
+<li onclick="openModule('modules/finance.html')">
+
+<i data-lucide="wallet"></i>
+
+Finance
+
+</li>
+
+
+
+
+<li onclick="openModule('modules/health.html')">
+
+<i data-lucide="heart-pulse"></i>
+
+Health
+
+</li>
+
+
+<!---
+
+<li onclick="openModule('modules/career.html')"></li>
+
+<i data-lucide="briefcase"></i>
+
+Career
+
+</li>
+
+
+
+
+<li onclick="openModule('modules/learning.html')"></li>
+
+<i data-lucide="graduation-cap"></i>
+
+Learning
+
+</li>
+
+
+
+
+<li>
+
+<i data-lucide="target"></i>
+
+Goal Engine
+
+</li>
+
+---->
+
+
+<li onclick="openModule('modules/assistant.html')">
+
+<i data-lucide="bot"></i>
+
+AI Assistant
+
+</li>
+
+
+
+
+<li onclick="openModule('modules/settings.html')">
+
+<i data-lucide="settings"></i>
+
+Settings
+
+</li>
+
+
+
+</ul>
+
+
+</aside>
+
+
+
+
+
+
+
+<!-- MAIN CONTENT -->
+
+
+<main>
+
+
+
+<header class="main-header">
+
+
+<div>
+
+
+<h1>
+Good Morning 👋
+</h1>
+
+
+<p>
+Your AI is ready to optimize your day.
+</p>
+
+
+</div>
+
+
+
+
+<div class="ai-status">
+
+<i data-lucide="bot"></i>
+
+<span>
+AI Online
+</span>
+
+</div>
+
+
+
+</header>
+
+
+
+
+
+
+
+
+<!-- CARDS -->
+
+
+<section class="cards">
+
+
+<div class="card gradient-blue">
+
+
+<i data-lucide="brain"></i>
+
+
+<h3>
+AI Intelligence Score
+</h3>
+
+
+<h2 class="counter" data-target="92">
+0%
+</h2>
+
+
+<p>
+Overall life optimization
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="card gradient-purple">
+
+
+<i data-lucide="check-circle"></i>
+
+
+<h3>
+Today's Goals
+</h3>
+
+
+<h2 class="counter" data-target="80">
+0%
+</h2>
+
+
+<p>
+Goals completed
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="card gradient-green">
+
+
+<i data-lucide="heart-pulse"></i>
+
+
+<h3>
+Health Status
+</h3>
+
+
+<h2 class="counter" data-target="91">
+0%
+</h2>
+
+
+<p>
+AI wellness analysis
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="card gradient-orange">
+
+
+<i data-lucide="coins"></i>
+
+
+<h3>
+Monthly Budget
+</h3>
+
+
+<h2 class="counter" data-target="78">
+0%
+</h2>
+
+
+<p>
+Expense management
+</p>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- AI MESSAGE -->
+
+
+<section class="ai-message">
+
+
+<i data-lucide="sparkles"></i>
+
+
+
+<div>
+
+
+<h2>
+AI Daily Recommendation
+</h2>
+
+
+<p>
+
+Your productivity is highest during morning hours.
+Complete your important tasks before noon.
+
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- GRAPH -->
+
+
+<section class="dashboard-box chart-box">
+
+
+<h2>
+
+<i data-lucide="trending-up"></i>
+
+Life Performance Analytics
+
+</h2>
+
+
+
+<p>
+AI tracked your weekly growth pattern
+</p>
+
+
+
+
+<canvas id="lifePerformanceChart"></canvas>
+
+
+
+</section>
+
+
+
+
+</main>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- JS -->
+
+<script src="js/script.js"></script>
+
+
+
+<script>
+
+
+lucide.createIcons();
+
+
+
+
+// LINE GRAPH
+
+
+const performanceChart = document.getElementById(
+"lifePerformanceChart"
+);
+
+
+
+if(performanceChart){
+
+
+
+new Chart(performanceChart,{
+
+
+type:"line",
+
+
+
+data:{
+
+
+
+labels:[
+
+"Mon",
+"Tue",
+"Wed",
+"Thu",
+"Fri",
+"Sat",
+"Sun"
+
+],
+
+
+
+datasets:[
+
+
+
+{
+
+label:"Productivity",
+
+data:[
+65,
+72,
+78,
+75,
+88,
+91,
+95
+],
+
+
+borderColor:"#00E5FF",
+
+backgroundColor:"rgba(0,229,255,0.08)",
+
+borderWidth:3,
+
+pointRadius:5,
+
+pointHoverRadius:8,
+
+tension:0.4,
+
+fill:true
+
+},
+
+
+
+
+{
+
+label:"Health",
+
+data:[
+70,
+75,
+80,
+78,
+85,
+90,
+92
+],
+
+
+borderColor:"#22C55E",
+
+backgroundColor:"rgba(34,197,94,0.08)",
+
+borderWidth:3,
+
+pointRadius:5,
+
+pointHoverRadius:8,
+
+tension:0.4,
+
+fill:true
+
+},
+
+
+
+
+{
+
+label:"Finance",
+
+data:[
+60,
+68,
+72,
+80,
+82,
+86,
+90
+],
+
+
+borderColor:"#F59E0B",
+
+backgroundColor:"rgba(245,158,11,0.08)",
+
+borderWidth:3,
+
+pointRadius:5,
+
+pointHoverRadius:8,
+
+tension:0.4,
+
+fill:true
+
+}
+
+
+
+]
+
+},
+
+
+
+
+options:{
+
+
+responsive:true,
+
+
+maintainAspectRatio:false,
+
+
+
+plugins:{
+
+
+legend:{
+
+
+position:"bottom",
+
+
+labels:{
+
+
+color:"#CBD5E1"
+
+
+}
+
+
+}
+
+
+},
+
+
+
+
+scales:{
+
+
+x:{
+
+
+ticks:{
+
+
+color:"#94A3B8"
+
+
+},
+
+
+grid:{
+
+
+display:false
+
+
+}
+
+
+},
+
+
+
+y:{
+
+
+beginAtZero:true,
+
+
+max:100,
+
+
+ticks:{
+
+
+color:"#94A3B8"
+
+
+},
+
+
+grid:{
+
+
+color:"rgba(148,163,184,0.1)"
+
+
+}
+
+
+}
+
+
+}
+
+
+
+}
+
+
+
+});
+
+
+
+}
+
+
+</script>
+
+
+
+</body>
+
+
+</html>
